@@ -24,7 +24,13 @@ export class FamilyStore {
   
   // 未读报警数量
   unreadAlertCount: number = 0
-  
+
+  // 绑定的家属手机号
+  familyPhone: string = ''
+
+  // 同步频率（秒）
+  syncInterval: number = 5
+
   /**
    * 更新用户信息
    */
@@ -154,7 +160,33 @@ export class FamilyStore {
       this.unreadAlertCount = 0
     }
   }
-  
+
+  /**
+   * 更新家属手机号
+   */
+  updateFamilyPhone(phone: string): void {
+    try {
+      this.familyPhone = phone
+      console.info('家属手机号已更新: ' + phone)
+    } catch (err) {
+      console.error('更新家属手机号失败', err)
+    }
+  }
+
+  /**
+   * 更新同步频率
+   */
+  updateSyncInterval(interval: number): void {
+    try {
+      if (interval > 0) {
+        this.syncInterval = interval
+        console.info('同步频率已更新: 每 ' + interval + ' 秒')
+      }
+    } catch (err) {
+      console.error('更新同步频率失败', err)
+    }
+  }
+
   /**
    * 重置状态
    */
@@ -167,6 +199,8 @@ export class FamilyStore {
       this.historyList = []
       this.alertList = []
       this.unreadAlertCount = 0
+      this.familyPhone = ''
+      this.syncInterval = 5
     } catch (err) {
       console.error('重置状态失败', err)
     }

@@ -4,8 +4,9 @@
 export interface UserModel {
   id?: string;
   username?: string;
-  name?: string;      // 👈 补上这个属性，修复 Device.ets 的报错
+  name?: string;
   phone?: string;
+  emergencyPhone?: string;
   role?: string;      // 角色：'elderly' | 'family'
   bindDeviceId?: string;
 }
@@ -16,7 +17,8 @@ export interface UserModel {
 export class User {
   id: string = '';
   username: string = '';
-  name: string = '';  // 👈 补上这个属性
+  name: string = '';
+  emergencyPhone: string = '';
   phone: string = '';
   role: string = 'elderly';
   bindDeviceId: string = '';
@@ -26,6 +28,7 @@ export class User {
       this.id = data.id ?? '';
       this.username = data.username ?? '';
       this.name = data.name ?? data.username ?? ''; // 如果传了name就用name，否则退而求其次用username
+      this.emergencyPhone = data.emergencyPhone ?? '';
       this.phone = data.phone ?? '';
       this.role = data.role ?? 'elderly';
       this.bindDeviceId = data.bindDeviceId ?? '';

@@ -9,7 +9,7 @@ export default struct Monitor {
   private getLocationStr(): string {
     const status = this.store.elderlyStatus;
     if (status && status.location && (status.location.latitude !== 0)) {
-      return "朝阳公园 - 附近"; // 实际开发建议接逆地理编码
+      return "朝阳公园"; // 实际开发建议接逆地理编码
     }
     return '获取位置中...';
   }
@@ -126,7 +126,6 @@ export default struct Monitor {
   @Builder buildVitalGrid() {
     Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) {
       this.buildVitalItem('❤️', '实时心率', `${this.store.elderlyStatus?.heartRate ?? '--'}`, 'bpm', '#FF4D4F')
-      this.buildVitalItem('🌡️', '当前体温', '36.6', '°C', '#FA8C16')
       this.buildVitalItem('📍', '最近位置', this.getLocationStr(), '', '#1890FF')
     }
   }
@@ -200,7 +199,7 @@ export default struct Monitor {
     }
     .width('100%')
     .padding(16)
-    .backgroundColor('#F0F7FF') // 浅蓝色淡雅底色
+    .backgroundColor('#f5f7fa') // 浅蓝色淡雅底色
     .borderRadius(16)
     .border({ width: 1, color: '#D0E7FF' })
   }

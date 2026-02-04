@@ -5,7 +5,7 @@ import { ActivityStatus, TimeUtil } from 'shared';
 @Entry
 @Component
 struct Index {
-  @Provide('elderlyStore') store: ElderlyStore = elderlyStore;
+  @State store: ElderlyStore = elderlyStore;
   @State isRunning: boolean = true;
 
   // 统一定义配置
@@ -97,7 +97,7 @@ struct Index {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F2F2F2')
+    .backgroundColor('#F5F7Fa')
   }
 
   // ⚠️ 3. 修改了参数，增加了 valueColor

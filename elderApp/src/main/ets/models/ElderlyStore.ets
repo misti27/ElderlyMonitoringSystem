@@ -70,6 +70,18 @@ export class ElderlyStore {
   }
 
   /**
+   * 更新紧急联系人电话
+   */
+  updateEmergencyPhone(phone: string): void {
+    try {
+      this.user.emergencyPhone = phone;
+      console.info('紧急电话已更新: ' + phone);
+    } catch (err) {
+      console.error('更新紧急电话失败');
+    }
+  }
+
+  /**
    * 添加传感器数据到缓冲区
    */
   addSensorData(data: AccelerometerData): void {

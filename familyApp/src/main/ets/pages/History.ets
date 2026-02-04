@@ -31,6 +31,6 @@ export default struct History {
         }.padding(16).height('100%').width('100%')
       }
     }
-    .width('100%').height('100%').backgroundColor('#f5f5f5')
+    .width('100%').height('100%').backgroundColor('#F8FAFC')
   }
 }
