@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "ElderAppAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "ElderAppAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "location_reason",
+      "value": "我们需要获取您的位置信息，以便子女能实时了解您的安全位置并在紧急情况下提供帮助。"
+    }
+  ]
+}

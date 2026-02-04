@@ -1,0 +1,70 @@
+{
+  "module": {
+    "name": "elderApp",
+    "type": "entry",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET" // 联网权限
+      },
+      {
+        "name": "ohos.permission.ACCELEROMETER" // 加速器权限
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION", // 模糊定位
+        "reason": "$string:location_reason", // 需在 string.json5 中定义理由，或直接写个字符串测试
+        "usedScene": { "abilities": ["EntryAbility"], "when": "inuse" }
+      },
+      {
+        "name": "ohos.permission.LOCATION", // 精确定位
+        "reason": "$string:location_reason",
+        "usedScene": { "abilities": ["EntryAbility"], "when": "inuse" }
+      }
+    ],
+    "description": "$string:module_desc",
+    "mainElement": "ElderAppAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "ElderAppAbility",
+        "srcEntry": "./ets/elderappability/ElderAppAbility.ets",
+        "description": "$string:ElderAppAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:ElderAppAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "ElderAppBackupAbility",
+        "srcEntry": "./ets/elderappbackupability/ElderAppBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ]
+      }
+    ]
+  }
+}

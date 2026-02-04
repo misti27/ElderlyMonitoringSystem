@@ -1,0 +1,33 @@
+{
+  "module": {
+    "name": "familyApp",
+    "type": "feature",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
+    "description": "$string:module_desc",
+    "mainElement": "FamilyAppAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "FamilyAppAbility",
+        "srcEntry": "./ets/familyappability/FamilyAppAbility.ets",
+        "description": "$string:FamilyAppAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:FamilyAppAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
+    ]
+  }
+}

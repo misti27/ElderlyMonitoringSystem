@@ -1,0 +1,12 @@
+{
+  "name": "elderapp",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "shared": "file:../shared"
+  }
+}
+
